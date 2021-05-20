@@ -40,9 +40,6 @@ list = ['a', 1, 3.14159265359]
 print(list)
 print(type(list))
 
-print('\n')
-print('Resolução dos exercicios: \n')
-
 # list.reverse()
 # print(list)
 
@@ -50,6 +47,9 @@ print('Resolução dos exercicios: \n')
 # Exercicios - Listas
 # Faca sem usar loops
 #########
+
+print('\n')
+print('Resolução dos exercicios: \n')
 
 print('Questao 1:')
 # Como selecionar 'wed' pelo indice?
