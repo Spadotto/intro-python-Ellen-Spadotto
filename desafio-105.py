@@ -12,9 +12,7 @@ listapares = [i for i in range(1000) if i % 2 == 0]
 print(listapares)
 
 print('\nDesafio 2:')
-lista = [i for i in range(99999999999999999999999999)]
-
-for i in range(len(lista)):
-    if i % 5 == 0:
+for i in range(99999999999999999999999999):
+    if i % 5 == 0 and i != 0:
         print(i)
         break
