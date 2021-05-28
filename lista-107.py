@@ -182,12 +182,9 @@ print('\nA diferença de métodos se uma lista para uma tupla é: ', metodoslist
 
 print('\nQuestao 3:')
 # 3) Adicione as coordenadas (latitude, longitude) para os dicts professor1, professor2 e professor3. Copie os dicts do arquivo 106.py. As coordenadas precisam ser inseparaveis e imutaveis.
-professor1['Latitude'] = '180'
-professor1['Longitude'] = '65'
-professor2['Latitude'] = '73'
-professor2['Longitude'] = '13'
-professor3['Latitude'] = '99'
-professor3['Longitude'] = '82'
+professor1['latitude/longitude'] = ('180', '65')
+professor2['latitude/longitude'] = ('73', '13')
+professor3['latitude/longitude'] = ('99', '82')
 
 print(professor1)
 print(professor2)
