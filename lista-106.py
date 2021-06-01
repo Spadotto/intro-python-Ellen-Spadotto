@@ -44,12 +44,12 @@ def remove_city():
             estados2.remove(['São Paulo', 'São Paulo'])
             estados2.remove(['Espírito Santo', 'Vitória'])
             estados2.remove(['Minas Gerais', 'Belo Horizonte'])
+            with open("capitais-BR.csv", 'w', encoding='utf8', newline='') as newcapitais:
+                writer = csv.writer(newcapitais)
+                writer.writerows(estados2)
         except:
             print('As capitais já foram exculídas\n')
             
-    with open("capitais-BR.csv", 'w', encoding='utf8', newline='') as newcapitais:
-        writer = csv.writer(newcapitais)
-        writer.writerows(estados2)
         
 def define_default_city(state):
     with io.open('capitais-BR.csv', 'r', encoding="utf8") as capitais:
@@ -68,7 +68,7 @@ def define_default_city(state):
      
 ## Exemplos
 
-#remove_city()
+remove_city()
 
 print('Questao 1:\n')
 
@@ -162,28 +162,23 @@ print('\nQuestao 3:')
 def deszipar():
     t = tarfile.open("lista-cpf.txt.tar.gz")
     t.extractall()
-    
-def removercpfrepetido(listaCPF):
-    semrepetidos = []
-    for i in listaCPF:
-        if i not in semrepetidos:
-            semrepetidos.append(i)
-
-    return semrepetidos
 
 def separarCPFS():
     deszipar()
-    cpfstotais = []
-    with open("lista-cpf.txt", 'r') as cpfs:
-            for i in cpfs:
-                cpfstotais.append(i)
+    semrepetidos = []
     
-    semrepetidos = removercpfrepetido(cpfstotais)
+    with open("lista-cpf.txt", 'r') as lista:
+        for i in lista:
+            lista.readlines()
+            if i not in semrepetidos:
+                semrepetidos.append(i)
+    lista.close()
+    
     print("CPFS Não Repetidos: ", len(semrepetidos))
-    arquivo = open('lista-cpf-unicos.txt', 'w')
-    for i in range(0, len(semrepetidos)):
-        arquivo.write(semrepetidos[i] + "\n")
-            
+    
+    with open('lista-cpf-unicos.txt', 'w+') as arquivo:
+        for i in semrepetidos:
+            arquivo.write(i + "\n")          
     arquivo.close()
 
 separarCPFS()
